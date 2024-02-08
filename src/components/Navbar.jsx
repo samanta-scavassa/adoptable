@@ -12,6 +12,7 @@ function Navbar() {
         <li>
           <h1>Adoptable</h1>
         </li>
+        add .
         <li>
           <Link to="/about">About</Link>
         </li>
