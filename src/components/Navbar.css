@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0077b6;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.navbar img {
+  max-width: 50px;
+  max-height: 50px;
+  display: flex;
+  justify-content: left;
+}
