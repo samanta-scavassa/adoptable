@@ -1,0 +1,21 @@
+footer {
+  background-color: #0077b6;
+  color: white;
+  border-radius: 1rem;
+}
+
+.logo {
+  width: 50px;
+}
+
+.social-media {
+  width: 80px;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  gap: 0.5rem;
+}
