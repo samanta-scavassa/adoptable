@@ -1,8 +1,14 @@
-# React + Vite
+# Adoptable 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This shelter website is our second project for the Web Dev bootcamp at Ironhack. 
 
-Currently, two official plugins are available:
+## Team Members
+- Samanta 
+- Joy
+- Juan 
+- Olumide
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Other documents
+
+- [Useful Tips](./documents/tips.md)
+- [Difficulties We Encountered](./documents/mistakes.md)
