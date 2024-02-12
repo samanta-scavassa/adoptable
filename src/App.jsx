@@ -13,13 +13,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <Footer />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cats" element={<CatsList pets={pets} />} />
         <Route path="/dogs" element={<DogsList pets={pets} />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }
