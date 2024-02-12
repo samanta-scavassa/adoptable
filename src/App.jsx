@@ -13,7 +13,6 @@ function App() {
   return (
     <>
       <Navbar />
-      <Footer />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/cats" element={<CatsList pets={pets} />} />

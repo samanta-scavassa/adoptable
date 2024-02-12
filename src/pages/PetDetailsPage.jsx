@@ -1,8 +1,6 @@
-import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import { useParams } from "react-router-dom";
 import moment from "moment";
-import { useEffect, useState } from "react";
-import * as React from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -10,21 +8,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function PetDetailsPage() {
+export default function PetDetailsPage({ pets }) {
   const [pet, setPet] = useState(null);
   const { id } = useParams();
-
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(
-        `https://adoptable.adaptable.app/pets/${id}`
-      );
-      setPet(response.data);
-    } catch (error) {
-      console.error("Error fetching data", error);
-    }
-  };
-  console.log(pet);
+  setPet(pets.filter((animal) => animal.id === id));
+  console.log(pets);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia sx={{ height: 140 }} image={pet.image_url} alt="pet image" />
