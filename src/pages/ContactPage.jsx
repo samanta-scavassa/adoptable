@@ -55,7 +55,8 @@ export default function ContactPage() {
           type="email"
           name="user_email"
           placeholder="123@gmail.com"
-          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}"
+          pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}"
+          title="Please enter a valid email address (e.g., 123@gmail.com)"
           required
         />
         <label>Mobile</label>
@@ -63,8 +64,8 @@ export default function ContactPage() {
           type="tel"
           name="user_tel"
           placeholder="enter your phone number"
-          pattern="0[1-9][0-9]{1,4}[0-9]{6,10}"
-          title="Please enter a valid phone number (e.g., 015221341410)"
+          pattern="0[0-9]{11}"
+          title="Please enter a German phone number with 12 digits starting with 0 (e.g., 015221341410)"
           required
         />
         <label>Message</label>
