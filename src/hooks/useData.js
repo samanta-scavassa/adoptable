@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-// const petsURL = "https://adoptable.adaptable.app/pets";
-const petsURL = "http://localhost:5005/pets";
+const petsURL = "https://adoptable.adaptable.app/pets";
 
 export default function useData() {
   const [pets, setPets] = useState([]);
