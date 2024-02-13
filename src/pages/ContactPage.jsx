@@ -1,7 +1,8 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import sadDog from "../assets/images/puppy-waiting.jpg";
-import "./ContactPage.css"
+import sadDog from "../assets/images/sad-dog.jpg";
+import "./ContactPage.css";
+import ErrorPage from "./ErrorPage";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,16 +32,11 @@ export default function ContactPage() {
   };
 
   if (isSubmitting) return <div> Loading...</div>; // Show the message "loading" when the email is being sent
-  if (error) return (
-    <>
-    <h1>Woofsy daisy, something went wrong...please try again.</h1>
-      <img className="sad-dog" src={sadDog} alt="sad dog" />
-    </>
-  );
+  if (error) return <ErrorPage errorMessage={"Message couldn't be sent."} />;
 
   return (
     <div className="contact-page">
-    <h1>Contact Us</h1>
+      <h1>Contact Us</h1>
       <form className="contact-form" onSubmit={sendEmail}>
         <label>Name:</label>
         <input
