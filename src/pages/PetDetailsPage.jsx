@@ -1,57 +1,85 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import moment from "moment";
-import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Box } from "@mui/material";
+import "./PetDetailsPage.css";
 
 export default function PetDetailsPage({ pets }) {
-  const [pet, setPet] = useState(null);
   const { id } = useParams();
-  setPet(pets.filter((animal) => animal.id === id));
-  console.log(pets);
+  const selectedPet = pets.find((animal) => animal.id === id);
+  if (!selectedPet) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image={pet.image_url} alt="pet image" />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {pet.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {pet.description}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          Breed: {pet.breed}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          Age: {moment().diff(pet?.date_of_birth, "years")}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          {pet.gender === "female" ? "Spayed" : "Neutered"}:
-          {pet.desexed ? "Yes" : "No"}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          Gender: {pet?.gender}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          Vaccinated: pet.vaccinated ? Yes : No
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          Wormed: {pet.wormed ? "Yes" : "No"}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Adopt</Button>
-        <Button size="small">Go back</Button>
-      </CardActions>
+    <Card
+      sx={{
+        maxWidth: 345,
+        display: "flex",
+        overflow: "visible",
+        boxShadow: "none",
+      }}
+    >
+      <Box className="PetDetailsCard">
+        <CardMedia
+          sx={{
+            height: "100%",
+            width: "100%",
+          }}
+          image={selectedPet.image_url}
+          alt="Pet image"
+        />
+        <CardContent sx={{ width: "100%" }} className="PetDetailsContent">
+          <Typography gutterBottom variant="h5" component="div">
+            {selectedPet.name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {selectedPet.description}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="div">
+            Breed: {selectedPet.breed}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="div">
+            Age: {moment().diff(selectedPet.date_of_birth, "years")}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="div">
+            {selectedPet.gender === "female" ? "Spayed" : "Neutered"}:
+            {selectedPet.desexed ? "Yes" : "No"}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="div">
+            Gender: {selectedPet.gender}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="div">
+            Vaccinated: {selectedPet.vaccinated ? "Yes" : "No"}
+          </Typography>
+          <Typography gutterBottom variant="body2" component="div">
+            Wormed: {selectedPet.wormed ? "Yes" : "No"}
+          </Typography>
+          <CardActions>
+            <Link to="/adopt">
+              <Button variant="contained" size="small">
+                Adopt
+              </Button>
+            </Link>
+            <Link to="/">
+              <Button variant="outlined" size="small">
+                Go back
+              </Button>
+            </Link>
+          </CardActions>
+        </CardContent>
+      </Box>
     </Card>
   );
 }
 
-// const PetDetailsPage = () => {
+// const selectedPetDetailsPage = () => {
 //   const [pet, setPet] = useState(null);
 //   const { id } = useParams();
 
