@@ -24,6 +24,8 @@ export default function PetDetailsPage({ pets }) {
         display: "flex",
         overflow: "visible",
         boxShadow: "none",
+        margin: "auto",
+        justifyContent: "center",
       }}
     >
       <Box className="PetDetailsCard">
@@ -67,7 +69,7 @@ export default function PetDetailsPage({ pets }) {
                 Adopt
               </Button>
             </Link>
-            <Link to="/">
+            <Link to={`/${selectedPet.category}s`}>
               <Button variant="outlined" size="small">
                 Go back
               </Button>
@@ -78,52 +80,3 @@ export default function PetDetailsPage({ pets }) {
     </Card>
   );
 }
-
-// const selectedPetDetailsPage = () => {
-//   const [pet, setPet] = useState(null);
-//   const { id } = useParams();
-
-//   const fetchData = async () => {
-//     try {
-//       const response = await axios.get(
-//         `https://adoptable.adaptable.app/pets/${id}`
-//       );
-//       setPet(response.data);
-//     } catch (error) {
-//       console.error("Error fetching data", error);
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchData();
-//   }, [id]);
-
-//   console.log(pet);
-//   if (!pet) {
-//     return <>Loading...</>;
-//   }
-//   return (
-//     <div className="container">
-//       <div className="left">
-//         <img src={pet.image_url} />
-//       </div>
-//       <div className="right">
-//         <h2>{pet?.name}</h2>
-//         <p>{pet.description}</p>
-//         <p>Breed: {pet?.breed}</p>
-//         <p>Age: {moment().diff(pet?.date_of_birth, "years")}</p>
-//         <p>
-//           {pet.gender === "female" ? "Spayed" : "Neutered"}:
-//           {pet.desexed ? "Yes" : "No"}
-//         </p>
-//         <p>Gender: {pet?.gender}</p>
-//         <p>Vaccinated: {pet.vaccinated ? "Yes" : "No"}</p>
-//         <p>Wormed: {pet.wormed ? "Yes" : "No"}</p>
-//         <button>Adopt</button>
-//         <Link to="/">
-//           <button>Go back</button>
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// };
