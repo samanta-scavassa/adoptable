@@ -5,14 +5,14 @@ import Navbar from "./components/Navbar";
 import CatsList from "./components/CatsList";
 import useData from "./hooks/useData";
 import DogsList from "./components/DogsList";
+import "./App.css"
 import ContactPage from "./pages/ContactPage";
-import "./App.css";
 
 function App() {
   const { pets } = useData();
 
   return (
-    <>
+    <div className="main-container">
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
