@@ -1,0 +1,8 @@
+.PetDetailsCard {
+  display: flex;
+  min-width: 100vh;
+  border: 1px solid #ccc;
+  margin: 2em;
+  padding: 2em;
+  border-radius: 15px;
+}
