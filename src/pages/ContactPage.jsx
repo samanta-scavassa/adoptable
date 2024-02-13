@@ -30,7 +30,7 @@ export default function ContactPage() {
     e.target.reset(); // Clears the form after sending the email
   };
 
-  if (isSubmitting) return <div> loading...</div>; // Show the message "loading" when the email is being sent
+  if (isSubmitting) return <div> Loading...</div>; // Show the message "loading" when the email is being sent
   if (error) return (
     <>
     <h1>Woofsy daisy, something went wrong...please try again.</h1>
@@ -74,7 +74,6 @@ export default function ContactPage() {
           className="contact-textarea"
           rows={10}
           name="message"
-          placeholder="Please briefly explain why you want to adopt this dog or cat."
           required
         />
         <input
