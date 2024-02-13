@@ -3,19 +3,27 @@
   padding: 0;
 }
 
+.navbar-h1 {
+  font-size: 2.5rem;
+}
+
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #0077b6;
   color: #ffffff;
-  padding: 1rem;
   border-radius: 0 0 1rem 1rem;
+  padding: 0 1rem;
+}
+
+.navbar a p {
+  color: white;
+  text-transform: uppercase;
 }
 
 .navbar img {
-  max-width: 50px;
-  max-height: 50px;
+  width: 5rem;
   display: flex;
-  justify-content: left;
+  
 }
