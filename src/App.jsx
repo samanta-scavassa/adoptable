@@ -6,6 +6,7 @@ import CatsList from "./components/CatsList";
 import useData from "./hooks/useData";
 import DogsList from "./components/DogsList";
 import ContactPage from "./pages/ContactPage";
+import "./App.css";
 
 function App() {
   const { pets } = useData();

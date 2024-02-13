@@ -1,20 +1,51 @@
 .sad-dog {
-    width: 30%;
+  width: 30%;
+  text-align: center;
+}
+
+.contact-page {
+  font-family: Roboto;
+}
+
+.contact-page > h1 {
     text-align: center;
+    margin-top: 2rem;
 }
 
 .contact-form {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    gap: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  gap: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
 }
 
+.contact-form label {
+}
+
+.contact-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+
 .contact-submit-button {
-    width: 5rem;
-    margin: 0 auto;
- }
+  width: 6rem;
+  margin: 10px auto;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.contact-submit-button:hover {
+  background-color: lightgray;
+}
 
 .contact-page input:user-invalid {
+  border: 2px solid lightcoral;
 }

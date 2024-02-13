@@ -40,8 +40,9 @@ export default function ContactPage() {
 
   return (
     <div className="contact-page">
+    <h1>Contact Us</h1>
       <form className="contact-form" onSubmit={sendEmail}>
-        <label>Name</label>
+        <label>Name:</label>
         <input
           type="text"
           name="user_name"
@@ -50,7 +51,7 @@ export default function ContactPage() {
           title="Please enter a valid name (up to 100 characters, letters and spaces only)"
           required
         />
-        <label>Email</label>
+        <label>Email:</label>
         <input
           type="email"
           name="user_email"
@@ -59,7 +60,7 @@ export default function ContactPage() {
           title="Please enter a valid email address (e.g., 123@gmail.com)"
           required
         />
-        <label>Mobile</label>
+        <label>Mobile:</label>
         <input
           type="tel"
           name="user_tel"
@@ -68,7 +69,7 @@ export default function ContactPage() {
           title="Please enter a German phone number with 12 digits starting with 0 (e.g., 015221341410)"
           required
         />
-        <label>Message</label>
+        <label>Message:</label>
         <textarea
           className="contact-textarea"
           rows={10}
