@@ -16,16 +16,16 @@ export default function Footer() {
           <Link to="/contact">
             <li className="contact-us">Contact us</li>
           </Link>
-            <li className="social-media">
-          <Link to="https://www.facebook.com/?locale=es_LA">
+          <li className="social-media">
+            <Link to="https://www.facebook.com/?locale=es_LA" target="_blank">
               <FaFacebook />
-          </Link>
-            </li>
-            <li className="social-media">
-          <Link to="https://www.instagram.com/">
+            </Link>
+          </li>
+          <li className="social-media">
+            <Link to="https://www.instagram.com/" target="_blank">
               <FaInstagramSquare />
-          </Link>
-            </li>
+            </Link>
+          </li>
           <Link to="/FAQs">
             <li>FAQs</li>
           </Link>
