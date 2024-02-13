@@ -8,7 +8,7 @@ function Navbar() {
       <Link to="/">
         <img src={Logo} alt="logo" />
       </Link>
-      <h1>Adoptable</h1>
+      <h1 className="navbar-h1">Adoptable</h1>
       <Link to="/about">
         <p>About</p>
       </Link>
