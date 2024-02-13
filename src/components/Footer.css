@@ -1,7 +1,10 @@
 footer {
   background-color: #0077b6;
   color: white;
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-top: auto;
+  font-family: Roboto;
 }
 
 .logo {
@@ -18,4 +21,17 @@ footer {
   align-items: center;
   list-style: none;
   gap: 0.5rem;
+}
+
+.footer a,
+.footer svg {
+  color: white;
+}
+
+.footer svg {
+  font-size: 2rem;
+}
+
+.contact-us {
+  text-transform: uppercase;
 }

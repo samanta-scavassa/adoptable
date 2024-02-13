@@ -14,7 +14,7 @@ export default function Footer() {
             </Link>
           </li>
           <Link to="/contact">
-            <li>Contact us</li>
+            <li className="contact-us">Contact us</li>
           </Link>
             <li className="social-media">
           <Link to="https://www.facebook.com/?locale=es_LA">
