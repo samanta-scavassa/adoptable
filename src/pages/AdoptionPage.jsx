@@ -17,6 +17,7 @@ const AdoptionPage = () => {
   const [telephone, setTelephone] = useState("");
   const [age, setAge] = useState("");
   const { id } = useParams();
+  const [adopterId, setAdopterId] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -33,15 +34,41 @@ const AdoptionPage = () => {
       petId: id,
     };
 
-    axios
-      .post("https://adoptable.adaptable.app/adopters", adopter)
-      .then((response) => {
-        console.log(response);
-        // navigate("/");
-      });
-    // .catch((error) => navigate("*"));
+    // axios
+    //   .post("https://adoptable.adaptable.app/adopters", adopter)
+    //   .then((response) => {
+    //     setAdopterId(response.data.id);
+    //     const adopterMessage = {
+    //       message,
+    //       adopterId,
+    //     };
+    //     return axios.post(
+    //       "https://adoptable.adaptable.app/messages",
+    //       adopterMessage
+    //     );
+    //   })
+    //   .catch((error) => navigate("/*"));
+    createPost(adopter);
   }
-
+  async function createPost(adopter) {
+    const firstResponse = await new Promise(
+      axios.post("https://adoptable.adaptable.app/adopters", adopter)
+    );
+    setAdopterId(firstResponse.data.id);
+    const adopterMessage = {
+      message,
+      adopterId,
+    };
+    const secondResponse = await axios.post(
+      "https://adoptable.adaptable.app/messages",
+      adopterMessage
+    );
+    secondResponse
+      .then((response) => {
+        navigate("/");
+      })
+      .catch((error) => navigate("/*"));
+  }
   return (
     <div className="formTitle">
       <h2>Register Form</h2>

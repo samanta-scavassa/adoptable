@@ -64,7 +64,7 @@ export default function PetDetailsPage({ pets }) {
             Wormed: {selectedPet.wormed ? "Yes" : "No"}
           </Typography>
           <CardActions>
-            <Link to={`/${selectedPet.category}/adopt/${selectedPet.id}`}>
+            <Link to={`/adopt/${selectedPet.id}`}>
               <Button variant="contained" size="small">
                 Adopt
               </Button>
