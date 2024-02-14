@@ -30,7 +30,7 @@ export default function ContactPage() {
     e.target.reset(); // Clears the form after sending the email
   };
 
-  if (isSubmitting) return <div> Loading...</div>; // Show the message "loading" when the email is being sent
+  if (isSubmitting) return <div>Loading...</div>; // Show the message "loading" when the email is being sent
   if (error) return <ErrorPage errorMessage={"Message couldn't be sent. Please try again."} />;
 
   return (

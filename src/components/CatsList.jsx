@@ -1,28 +1,23 @@
+import { filterByNameAndBreed } from "../utils/filterHelpers";
 import PetCard from "./PetCard";
 import "./PetsList.css";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
 
-function CatsList({ pets }) {
+function CatsList({ pets, isLoading }) {
   // something that changes --> input in the search bar
   const [query, setQuery] = useState("");
 
   // a helper function to get all the pets with category 'cat'
   const checkCatCategory = (pet) => pet.category === "cat";
 
-  const filteredCats = pets.filter(checkCatCategory).filter((cat) => {
-    if (query) {
-      // if there's a query, do the following
-      return (
-        // check the cat name OR the breed
-        cat.name.toLowerCase().includes(query) ||
-        cat.breed.toLowerCase().includes(query)
-      );
-    } else {
-      // if there's no query, keep all cats
-      return true;
-    }
-  });
+  const filteredCats = pets
+    .filter(checkCatCategory)
+    .filter((cat) => filterByNameAndBreed(cat, query));
+
+  if (isLoading) {
+    return <>Loading...</>;
+  }
 
   return (
     <>
