@@ -1,4 +1,7 @@
 import { useState } from "react";
+import "./SearchBar.css"
+import { FaSearch } from "react-icons/fa";
+
 
 /**
  * SearchBar component showing an input
@@ -15,14 +18,15 @@ export default function SearchBar({ onFilter }) {
   };
 
   return (
-    <div>
-      <h3 className="searchbar">Search</h3>
+    <div className="search-bar-container">
       <input
+        className="search-bar-input"
         type="text"
         name="searchbar"
         value={query}
         onChange={handleSearch}
       />
+      <FaSearch />
     </div>
   );
 }
