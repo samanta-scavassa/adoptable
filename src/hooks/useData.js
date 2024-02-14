@@ -15,7 +15,7 @@ export default function useData() {
         setPets(response.data);
         setIsLoading(false);
       })
-      .catch((error) => console.log(error));
+      .catch(console.error);
   }, []);
 
   return { pets, isLoading };

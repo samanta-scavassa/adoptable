@@ -1,4 +1,5 @@
 import { filterByNameAndBreed } from "../utils/filterHelpers";
+import Loading from "./Loading";
 import PetCard from "./PetCard";
 import "./PetsList.css";
 import SearchBar from "./SearchBar";
@@ -16,7 +17,9 @@ function CatsList({ pets, isLoading }) {
     .filter((cat) => filterByNameAndBreed(cat, query));
 
   if (isLoading) {
-    return <>Loading...</>;
+    return <>
+      <Loading />
+    </>;
   }
 
   return (

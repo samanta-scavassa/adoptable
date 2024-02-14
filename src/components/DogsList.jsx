@@ -3,6 +3,7 @@ import PetCard from "./PetCard";
 import "./PetsList.css";
 import SearchBar from "./SearchBar";
 import { useState } from "react";
+import Loading from "./Loading";
 
 function DogsList({ pets, isLoading }) {
   const [query, setQuery] = useState("");
@@ -13,7 +14,7 @@ function DogsList({ pets, isLoading }) {
     .filter((dog) => filterByNameAndBreed(dog, query));
 
   if (isLoading) {
-    return <>Loading...</>;
+    return <Loading />;
   }
 
   return (

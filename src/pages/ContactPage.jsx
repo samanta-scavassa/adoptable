@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import "./ContactPage.css";
 import ErrorPage from "./ErrorPage";
+import Loading from "../components/Loading";
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +31,7 @@ export default function ContactPage() {
     e.target.reset(); // Clears the form after sending the email
   };
 
-  if (isSubmitting) return <div>Loading...</div>; // Show the message "loading" when the email is being sent
+  if (isSubmitting) return <Loading/ >; // Show the message "loading" when the email is being sent
   if (error) return <ErrorPage errorMessage={"Message couldn't be sent. Please try again."} />;
 
   return (
