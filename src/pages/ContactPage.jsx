@@ -1,6 +1,5 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import sadDog from "../assets/images/sad-dog.jpg";
 import "./ContactPage.css";
 import ErrorPage from "./ErrorPage";
 
