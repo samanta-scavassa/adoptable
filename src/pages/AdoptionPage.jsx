@@ -1,9 +1,11 @@
 import "./AdoptionPage.css";
 import { useState } from "react";
-import { TextField, Button, Stack, Container } from "@mui/material";
-import { Link } from "react-router-dom";
+import { TextField, Button, Stack } from "@mui/material";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const RegisterForm = () => {
+const AdoptionPage = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -13,30 +15,37 @@ const RegisterForm = () => {
   const [country, setCountry] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [telephone, setTelephone] = useState("");
+  const [age, setAge] = useState("");
+  const { id } = useParams();
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(
-      firstName,
-      lastName,
-      email,
-      message,
-      street,
-      city,
-      country,
-      zipCode,
-      telephone
-    );
+    let adopter = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      street: street,
+      city: city,
+      country: country,
+      zip_code: zipCode,
+      phone_number: telephone,
+      age: age,
+      petId: id,
+    };
+
+    axios
+      .post("https://adoptable.adaptable.app/adopters", adopter)
+      .then((response) => {
+        console.log(response);
+        // navigate("/");
+      });
+    // .catch((error) => navigate("*"));
   }
 
   return (
     <div className="formTitle">
       <h2>Register Form</h2>
-      <form
-        onSubmit={handleSubmit}
-        action={<Link to="/login" />}
-        className="adoptionForm"
-      >
+      <form onSubmit={handleSubmit} className="adoptionForm">
         <Stack spacing={2} direction="row" sx={{ marginBottom: 4 }}>
           <TextField
             type="text"
@@ -55,6 +64,16 @@ const RegisterForm = () => {
             label="Last Name"
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
+            fullWidth
+            required
+          />
+          <TextField
+            type="number"
+            variant="outlined"
+            color="secondary"
+            label="Age"
+            onChange={(e) => setAge(e.target.value)}
+            value={age}
             fullWidth
             required
           />
@@ -146,4 +165,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default AdoptionPage;

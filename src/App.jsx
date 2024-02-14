@@ -8,7 +8,7 @@ import DogsList from "./components/DogsList";
 import "./App.css";
 import PetDetailsPage from "./pages/PetDetailsPage";
 import ContactPage from "./pages/ContactPage";
-
+import AdoptionPage from "./pages/AdoptionPage";
 
 function App() {
   const { pets } = useData();
@@ -22,6 +22,7 @@ function App() {
         <Route path="/dogs" element={<DogsList pets={pets} />} />
         <Route path="/pets/:id" element={<PetDetailsPage pets={pets} />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/adopt/:id" element={<AdoptionPage />} />
       </Routes>
       <Footer />
     </div>
