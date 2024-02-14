@@ -1,4 +1,29 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.Media {
+  flex: 1;
+  position: relative;
+}
+
+.MediaCaption {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  opacity: 0.6;
+  width: 100%;
+  height: 10%;
+  transition: 300ms;
+  cursor: pointer;
+  padding: 0 12px;
+}
+
+.MediaLink {
+  display: flex;
+  flex: 1;
 }
