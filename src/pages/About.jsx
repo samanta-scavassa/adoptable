@@ -3,12 +3,21 @@ import JoyImg from "../assets/images/Joy.jpeg";
 import SamantaImg from "../assets/images/Samanta.jpg";
 import JuanImg from "../assets/images/Juan.jpg";
 import Olumide from "../assets/images/Olumide.jpg";
+import dog from "../assets/images/dog-high-five-concept.jpg";
 import "./About.css";
 
 function About() {
   return (
     <div className="about-page">
       <h1>About Us</h1>
+      <h2 className="the-shelter">The Shelter</h2>
+      <p className="welcome">
+        Welcome to Adoptable - Where Home Begins! Connecting you with rescue
+        pets waiting for their forever families. Simplifying adoption, spreading
+        love, one pet at a time. Embrace the joy of adoption with Adoptable
+        today!
+      </p>
+      <img className="image" src={dog} alt="Shelter image" />
       <h2 className="our-team">Our Team</h2>
       <section className="team">
         {members.map((member, index) => (
