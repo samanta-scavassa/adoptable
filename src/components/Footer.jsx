@@ -9,11 +9,11 @@ export default function Footer() {
       <footer className="footer">
         <ul>
           <li>
-            <Link to="/">
+            <Link to="/adoptable">
               <img className="logo" src={logo} alt="logo" />
             </Link>
           </li>
-          <Link to="/contact">
+          <Link to="/adoptable/contact">
             <li className="contact-us">Contact us</li>
           </Link>
           <li className="social-media">

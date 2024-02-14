@@ -58,7 +58,7 @@ function Item({ items }) {
       }}
     >
       {items.map((pet) => (
-        <Link className="MediaLink" to={`/pets/${pet.id}`} key={pet.id}>
+        <Link className="MediaLink" to={`/adoptable/pets/${pet.id}`} key={pet.id}>
           <CardMedia className="Media" image={pet.image_url} title={pet.name}>
             <Typography className="MediaCaption">{pet.name}</Typography>
           </CardMedia>
