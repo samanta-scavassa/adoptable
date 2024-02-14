@@ -1,0 +1,37 @@
+footer {
+  background-color: #0077b6;
+  color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  margin-top: auto;
+  font-family: Roboto;
+}
+
+.logo {
+  width: 50px;
+}
+
+.social-media {
+  width: 80px;
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.footer a,
+.footer svg {
+  color: white;
+}
+
+.footer svg {
+  font-size: 2rem;
+}
+
+.contact-us {
+  text-transform: uppercase;
+}
