@@ -1,7 +1,11 @@
+
+// import ErrorPage from "./ErrorPage";
+
 import { CardMedia, Grid, Paper, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import PetListCard from "../components/PetListCard";
 
 const generatePetCarouselItems = (pets) => {
   const items = [];
@@ -19,15 +23,23 @@ const generatePetCarouselItems = (pets) => {
 
 function Homepage({ pets }) {
   const carousel = generatePetCarouselItems(pets);
-
+  //Use the lines below if we want to have a customized error message for the home page (ask Joy for further detail)
+  // const error = false;
+  // if(error) {
+  //   return <ErrorPage errorMessage={"Data not found. Please try again."} />
+  // }
+  
   return (
-    <Carousel>
-      {carousel.map((items, index) => (
-        <Paper elevation={0} key={index} sx={{ height: 300 }}>
-          <Item items={items} />
-        </Paper>
-      ))}
-    </Carousel>
+    <>
+      <PetListCard />
+      <Carousel>
+        {carousel.map((items, index) => (
+          <Paper elevation={0} key={index} sx={{ height: 300 }}>
+            <Item items={items} />
+          </Paper>
+        ))}
+      </Carousel>{" "}
+    </>
   );
 }
 
