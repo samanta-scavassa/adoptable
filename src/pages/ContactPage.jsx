@@ -32,7 +32,7 @@ export default function ContactPage() {
   };
 
   if (isSubmitting) return <div> Loading...</div>; // Show the message "loading" when the email is being sent
-  if (error) return <ErrorPage errorMessage={"Message couldn't be sent."} />;
+  if (error) return <ErrorPage errorMessage={"Message couldn't be sent. Please try again."} />;
 
   return (
     <div className="contact-page">
