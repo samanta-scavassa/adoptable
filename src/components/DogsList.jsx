@@ -1,12 +1,28 @@
+import { filterByNameAndBreed } from "../utils/filterHelpers";
 import PetCard from "./PetCard";
 import "./PetsList.css";
+import SearchBar from "./SearchBar";
+import { useState } from "react";
+import Loading from "./Loading";
 
-function DogsList({ pets }) {
+function DogsList({ pets, isLoading }) {
+  const [query, setQuery] = useState("");
+  const checkDogCategory = (pet) => pet.category === "dog";
+
+  const filteredDogs = pets
+    .filter(checkDogCategory)
+    .filter((dog) => filterByNameAndBreed(dog, query));
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="PetsListSection">
-      {pets
-        .filter((pet) => pet.category === "dog")
-        .map((dog) => {
+    <>
+      <SearchBar onFilter={setQuery} />
+
+      <div className="PetsListSection">
+        {filteredDogs.map((dog) => {
           const pup = {
             id: dog.id,
             name: dog.name,
@@ -22,7 +38,8 @@ function DogsList({ pets }) {
           };
           return <PetCard key={pup.id} pet={pup} />;
         })}
-    </div>
+      </div>
+    </>
   );
 }
 
