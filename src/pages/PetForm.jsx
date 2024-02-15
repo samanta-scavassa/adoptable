@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./PetForm.css";
 import {Button} from "@mui/material";
+import CreateData from "../hooks/createData";
 
 
 export default function PetForm({ pets }) {
@@ -46,7 +47,18 @@ export default function PetForm({ pets }) {
       imageURL,
       category,
     };
-    useCreateData(newPet);
+    // CreateData(newPet);
+    useEffect(() => {
+      axios
+        .post(petsURL, petData)
+        .then(() => {
+          setSuccessMessage(true);
+          setTimeout(function () {
+            navigate("/");
+          }, 3500);
+        })
+        .catch(() => navigate("/*"));
+    }, []);
   };
 
   return (
