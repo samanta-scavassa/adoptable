@@ -1,10 +1,14 @@
 import { useState } from "react";
-import "./PetForm.css";
-import {Button} from "@mui/material";
-import CreateData from "../hooks/createData";
+import "./AddPetForm.css";
+import { Alert, Button } from "@mui/material";
+import { useNavigate } from "react-router";
+import axios from "axios";
 
+export default function AddPetForm() {
+  const petsURL = "https://adoptable.adaptable.app/pets";
+  const [successMessage, setSuccessMessage] = useState(false);
+  const navigate = useNavigate();
 
-export default function PetForm({ pets }) {
   // States:
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
@@ -31,38 +35,35 @@ export default function PetForm({ pets }) {
   const handleImageURL = (e) => setImageURL(e.target.value);
   const handleCategoryOption = (e) => setCategory(e.target.value);
 
-  // prevent reloading when clicking on the "save" button
-  const handleSubmit = (e) => {
+  const handleSave = (e) => {
     e.preventDefault();
     const newPet = {
       name,
       breed,
-      dateOfBirth,
+      date_of_birth: dateOfBirth,
       desexed,
       gender,
-      microchipNumber,
+      microchip_number: microchipNumber,
       vaccinated,
       wormed,
       description,
-      imageURL,
+      image_url: imageURL,
       category,
     };
     // CreateData(newPet);
-    useEffect(() => {
-      axios
-        .post(petsURL, petData)
-        .then(() => {
-          setSuccessMessage(true);
-          setTimeout(function () {
-            navigate("/");
-          }, 3500);
-        })
-        .catch(() => navigate("/*"));
-    }, []);
+    axios
+      .post(petsURL, newPet)
+      .then(() => {
+        setSuccessMessage(true);
+        setTimeout(function () {
+          navigate("/adoptable");
+        }, 3500);
+      })
+      .catch(() => navigate("/*"));
   };
 
   return (
-    <form className="pet-form" onSubmit={handleSubmit}>
+    <form className="pet-form" onSubmit={handleSave}>
       <h1>Add a new furry friend</h1>
       <div className="pet-form-container">
         <label>
@@ -73,7 +74,6 @@ export default function PetForm({ pets }) {
             placeholder="pet's name"
             value={name}
             onChange={handleNameInput}
-            pattern="[A-Za-z\s]{1,100}"
             required
           />
         </label>
@@ -179,16 +179,16 @@ export default function PetForm({ pets }) {
         </label>
       </div>
       <div className="pet-form-buttons-container">
-        <Button variant="contained" color="primary" type="submit" onSubmit={handleSubmit}>
+        <Button
+          variant="contained"
+          color="primary"
+          type="submit"
+          onSubmit={handleSave}
+        >
           Save
         </Button>
-        <Button variant="contained" color="primary" type="submit">
-          Edit
-        </Button>
-        <Button variant="contained" color="primary" type="submit">
-          Delete
-        </Button>
       </div>
+      {successMessage && <Alert sx={{ mb: 2 }}>Pet added succesfully!</Alert>}
     </form>
   );
 }
