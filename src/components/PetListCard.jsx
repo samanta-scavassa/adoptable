@@ -17,7 +17,6 @@ const DemoPaper = styled(Paper)(({ theme }) => ({
 export default function PetListCard() {
   return (
     <Stack
-      classname="PetsListCard"
       direction="row"
       spacing={2}
       sx={{ justifyContent: "center", alignItems: "center", margin: 7, gap: 3 }}

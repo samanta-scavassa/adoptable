@@ -12,6 +12,8 @@ import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
 import AdoptionPage from "./pages/AdoptionPage";
 import FAQsPage from "./pages/FAQsPage";
+import AddPetForm from "./pages/AddPetForm";
+import EditPetForm from "./pages/EditPetForm";
 
 function App() {
   const { pets, isLoading } = useData();
@@ -38,6 +40,8 @@ function App() {
         <Route path="/adoptable/about" element={<About />} />
         <Route path="/adoptable/adopt/:id" element={<AdoptionPage />} />
         <Route path="/adoptable/faqs" element={<FAQsPage />} />
+        <Route path="/adoptable/create-pets" element={<AddPetForm />} />
+        <Route path="/adoptable/edit-pet/:petId" element={<EditPetForm />} />
       </Routes>
       <Footer />
     </div>
