@@ -1,0 +1,18 @@
+.search-bar-container {
+  margin: 3rem auto;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10rem;
+}
+
+.search-bar-container svg {
+  vertical-align: middle;
+}
+
+.search-bar-input {
+  font-size: 16px;
+  border: none;
+  width: 30ch;
+  outline: none;
+  font-weight: bold;
+}
