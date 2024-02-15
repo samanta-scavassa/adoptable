@@ -22,13 +22,13 @@ export default function PetListCard() {
       spacing={2}
       sx={{ justifyContent: "center", alignItems: "center", margin: 7, gap: 3 }}
     >
-      <Link to={`/cats`}>
+      <Link to={`cats`}>
         <div className="CatCard">
           <img className="CatImage" src={Cat} alt="Cat icon" />
           <DemoPaper square={false}>CATS</DemoPaper>
         </div>
       </Link>
-      <Link to={`/dogs`}>
+      <Link to={`dogs`}>
         <div className="DogCard">
           <img className="DogImage" src={Dog} alt="Dog icon" />
           <DemoPaper square={false}>DOGS</DemoPaper>

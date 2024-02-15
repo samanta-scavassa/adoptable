@@ -5,11 +5,11 @@ import Logo from "../assets/images/logo.png";
 function Navbar() {
   return (
     <nav className="navbar">
-      <Link to="/">
+      <Link to="/adoptable">
         <img src={Logo} alt="logo" />
       </Link>
       <h1 className="navbar-h1">Adoptable</h1>
-      <Link to="/about">
+      <Link to="/adoptable/about">
         <p>About</p>
       </Link>
     </nav>

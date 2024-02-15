@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function PetCard({ pet }) {
   return (
-    <Link to={`/pets/${pet.id}`}>
+    <Link to={`/adoptable/pets/${pet.id}`}>
       <Card className="PetCard" sx={{ maxWidth: 345 }}>
         <CardActionArea>
           <CardMedia

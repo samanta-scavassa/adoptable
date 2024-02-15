@@ -50,7 +50,7 @@ const AdoptionPage = () => {
           .then(() => {
             setSuccessMessage(true);
             setTimeout(function () {
-              navigate("/");
+              navigate("/adoptable");
             }, 3500);
           })
           .catch((error) => navigate("/*"));
