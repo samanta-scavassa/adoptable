@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import Card from "@mui/material/Card";
@@ -12,6 +12,7 @@ import "./PetDetailsPage.css";
 
 export default function PetDetailsPage({ pets }) {
   const { id } = useParams();
+  const navigate = useNavigate();
   const selectedPet = pets.find((animal) => animal.id === id);
   if (!selectedPet) {
     return <div>Loading...</div>;
@@ -64,16 +65,18 @@ export default function PetDetailsPage({ pets }) {
             Wormed: {selectedPet.wormed ? "Yes" : "No"}
           </Typography>
           <CardActions>
-            <Link to="/adopt">
+            <Link to={`/adoptable/adopt/${selectedPet.id}`}>
               <Button variant="contained" size="small">
                 Adopt
               </Button>
             </Link>
-            <Link to={`/${selectedPet.category}s`}>
-              <Button variant="outlined" size="small">
-                Go back
-              </Button>
-            </Link>
+            <Button
+              onClick={() => navigate(-1)}
+              variant="outlined"
+              size="small"
+            >
+              Go back
+            </Button>
           </CardActions>
         </CardContent>
       </Box>

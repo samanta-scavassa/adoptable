@@ -1,12 +1,32 @@
+import { filterByNameAndBreed } from "../utils/filterHelpers";
+import Loading from "./Loading";
 import PetCard from "./PetCard";
 import "./PetsList.css";
+import SearchBar from "./SearchBar";
+import { useState } from "react";
 
-function CatsList({ pets }) {
+function CatsList({ pets, isLoading }) {
+  // something that changes --> input in the search bar
+  const [query, setQuery] = useState("");
+
+  // a helper function to get all the pets with category 'cat'
+  const checkCatCategory = (pet) => pet.category === "cat";
+
+  const filteredCats = pets
+    .filter(checkCatCategory)
+    .filter((cat) => filterByNameAndBreed(cat, query));
+
+  if (isLoading) {
+    return <>
+      <Loading />
+    </>;
+  }
+
   return (
-    <div className="PetsListSection">
-      {pets
-        .filter((pet) => pet.category === "cat")
-        .map((cat) => {
+    <>
+      <SearchBar onFilter={setQuery} />
+      <div className="PetsListSection">
+        {filteredCats.map((cat) => {
           const kitten = {
             id: cat.id,
             name: cat.name,
@@ -22,7 +42,8 @@ function CatsList({ pets }) {
           };
           return <PetCard key={kitten.id} pet={kitten} />;
         })}
-    </div>
+      </div>
+    </>
   );
 }
 
