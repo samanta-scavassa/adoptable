@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
 import AdoptionPage from "./pages/AdoptionPage";
+import PetForm from "./pages/PetForm";
 
 function App() {
   const { pets, isLoading } = useData();
@@ -30,6 +31,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
         <Route path="/adoptable/about" element={<About />} />
         <Route path="/adoptable/adopt/:id" element={<AdoptionPage />} />
+        <Route path="/adoptable/create-pets" element={<PetForm />} />
       </Routes>
       <Footer />
     </div>
