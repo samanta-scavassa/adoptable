@@ -1,20 +1,38 @@
 .team {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 1rem;
   padding-top: 20px;
+  justify-content: center;
+  padding: 50px;
 }
 
 .the-shelter {
-  padding-top: 30px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 .welcome {
   font-size: x-large;
   font-weight: 400;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 
 .image {
-  width: 70%;
+  width: 80%;
+  align-content: center;
+  align-items: center;
+  padding-left: 300px;
+  
+}
+
+.our-team {
+  text-align: center;
+}
+
+.about {
+  text-align: center;
+  padding-top: 30px;x;
 }

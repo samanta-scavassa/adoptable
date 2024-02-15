@@ -1,0 +1,19 @@
+.CatImage {
+  width: 45px;
+  position: absolute;
+}
+.DogImage {
+  width: 45px;
+  position: absolute;
+}
+
+.CatCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DogCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

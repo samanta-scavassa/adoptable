@@ -9,7 +9,7 @@ import "./About.css";
 function About() {
   return (
     <div className="about-page">
-      <h1>About Us</h1>
+      <h1 className="about"> About Us</h1>
       <h2 className="the-shelter">The Shelter</h2>
       <p className="welcome">
         Welcome to Adoptable - Where Home Begins! Connecting you with rescue

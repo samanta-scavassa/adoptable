@@ -5,6 +5,7 @@ import { CardMedia, Grid, Paper, Typography } from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import PetListCard from "../components/PetListCard";
 
 const generatePetCarouselItems = (pets) => {
   const items = [];
@@ -29,13 +30,16 @@ function Homepage({ pets }) {
   // }
   
   return (
-    <Carousel>
-      {carousel.map((items, index) => (
-        <Paper elevation={0} key={index} sx={{ height: 300 }}>
-          <Item items={items} />
-        </Paper>
-      ))}
-    </Carousel>
+    <>
+      <PetListCard />
+      <Carousel>
+        {carousel.map((items, index) => (
+          <Paper elevation={0} key={index} sx={{ height: 300 }}>
+            <Item items={items} />
+          </Paper>
+        ))}
+      </Carousel>{" "}
+    </>
   );
 }
 
