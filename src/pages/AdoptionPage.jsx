@@ -1,6 +1,6 @@
 import "./AdoptionPage.css";
 import { useState } from "react";
-import { TextField, Button, Stack } from "@mui/material";
+import { TextField, Button, Stack, Alert } from "@mui/material";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -17,6 +17,7 @@ const AdoptionPage = () => {
   const [telephone, setTelephone] = useState("");
   const [age, setAge] = useState("");
   const { id } = useParams();
+  const [successMessage, setSuccessMessage] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -36,24 +37,24 @@ const AdoptionPage = () => {
     createPost(adopter);
   }
   async function createPost(adopter) {
-    try {
-      const firstResponse = await axios.post(
-        "https://adoptable.adaptable.app/adopters",
-        adopter
-      );
-      const adopterId = firstResponse.data.id;
-      const adopterMessage = {
-        message,
-        adopterId,
-      };
-      await axios.post(
-        "https://adoptable.adaptable.app/messages",
-        adopterMessage
-      );
-      navigate("/");
-    } catch {
-      navigate("/*");
-    }
+    axios
+      .post("https://adoptable.adaptable.app/adopters", adopter)
+      .then((res) => {
+        const adopterId = res.data.id;
+        const adopterMessage = {
+          message,
+          adopterId,
+        };
+        axios
+          .post("https://adoptable.adaptable.app/messages", adopterMessage)
+          .then(() => {
+            setSuccessMessage(true);
+            setTimeout(function () {
+              navigate("/");
+            }, 3500);
+          })
+          .catch((error) => navigate("/*"));
+      });
   }
   return (
     <div className="formTitle">
@@ -173,6 +174,9 @@ const AdoptionPage = () => {
         <Button variant="outlined" color="secondary" type="submit">
           Adopt
         </Button>
+        {successMessage && (
+          <Alert sx={{ mb: 2 }}>Your adoption form has been submitted!</Alert>
+        )}
       </form>
     </div>
   );
