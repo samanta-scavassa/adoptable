@@ -29,7 +29,7 @@ function App() {
         <Route path="/adoptable/contact" element={<ContactPage />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/adoptable/about" element={<About />} />
-        <Route path="/adopt/:id" element={<AdoptionPage />} />
+        <Route path="/adoptable/adopt/:id" element={<AdoptionPage />} />
       </Routes>
       <Footer />
     </div>
