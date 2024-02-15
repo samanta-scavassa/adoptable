@@ -17,7 +17,7 @@ function App() {
     <div className="main-container">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage pets={pets} />} />
         <Route
           path="/cats"
           element={<CatsList pets={pets} isLoading={isLoading} />}
