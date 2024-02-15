@@ -6,3 +6,14 @@
   padding: 2em;
   border-radius: 15px;
 }
+
+.label {
+  display: flex;
+  background-color: rgba(100, 100, 100, 0.1);
+  color: rgb(73, 71, 71);
+  margin: 10px;
+  border-radius: 7px;
+  padding: 10px;
+  align-items: center;
+  max-width: 212px;
+}

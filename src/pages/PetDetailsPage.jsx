@@ -9,18 +9,34 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Alert, Box } from "@mui/material";
 import "./PetDetailsPage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function PetDetailsPage({ pets }) {
   const [successMessage, setSuccessMessage] = useState(false);
+  const [adopters, setAdopters] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
   const selectedPet = pets.find((animal) => animal.id === id);
+  const petsURL = `https://adoptable.adaptable.app/pets/${selectedPet.id}`;
+  const adoptersURL = `https://adoptable.adaptable.app/pets/${selectedPet.id}/adopters`;
+
+  const fetchAdopters = () => {
+    axios
+      .get(adoptersURL)
+      .then((response) => {
+        setAdopters(response.data);
+      })
+      .catch(() => navigate("/*"));
+  };
+
+  useEffect(() => {
+    fetchAdopters();
+  }, []);
+
   if (!selectedPet) {
     return <div>Loading...</div>;
   }
-  const petsURL = `https://adoptable.adaptable.app/pets/${selectedPet.id}`;
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -60,6 +76,11 @@ export default function PetDetailsPage({ pets }) {
             <Typography gutterBottom variant="h5" component="div">
               {selectedPet.name}
             </Typography>
+            {adopters && (
+              <span className="label">
+                {adopters.length} adopters interested ♡
+              </span>
+            )}
             <Typography variant="body2" color="text.secondary">
               {selectedPet.description}
             </Typography>
