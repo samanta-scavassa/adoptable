@@ -26,7 +26,7 @@ export default function Footer() {
               <FaInstagramSquare />
             </Link>
           </li>
-          <Link to="/FAQs">
+          <Link to="/adoptable/faqs">
             <li>FAQs</li>
           </Link>
         </ul>
