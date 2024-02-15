@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 import ErrorPage from "./pages/ErrorPage";
 import About from "./pages/About";
 import AdoptionPage from "./pages/AdoptionPage";
+import FAQsPage from "./pages/FAQsPage";
 
 function App() {
   const { pets, isLoading } = useData();
@@ -20,8 +21,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/adoptable" element={<HomePage pets={pets} />} />
-        <Route path="/adoptable/cats" element={<CatsList pets={pets} isLoading={isLoading} />} />
-        <Route path="/adoptable/dogs" element={<DogsList pets={pets} isLoading={isLoading} />} />
+        <Route
+          path="/adoptable/cats"
+          element={<CatsList pets={pets} isLoading={isLoading} />}
+        />
+        <Route
+          path="/adoptable/dogs"
+          element={<DogsList pets={pets} isLoading={isLoading} />}
+        />
         <Route
           path="/adoptable/pets/:id"
           element={<PetDetailsPage pets={pets} />}
@@ -30,6 +37,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
         <Route path="/adoptable/about" element={<About />} />
         <Route path="/adoptable/adopt/:id" element={<AdoptionPage />} />
+        <Route path="/adoptable/faqs" element={<FAQsPage />} />
       </Routes>
       <Footer />
     </div>
