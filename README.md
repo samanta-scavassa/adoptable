@@ -48,7 +48,7 @@ This website made with React is our second project for the Web Dev bootcamp at I
 
 ## Team Members
 
-- Samanta ![GitHub Profile](https://github.com/samanta-scavassa)
-- Joy ![GitHub Profile](https://github.com/TinyjoyTW)
-- Juan ![GitHub Profile](https://github.com/juanisolis1111)
-- Olumide ![GitHub Profile](https://github.com/Wence88)
+-  [Samanta](https://github.com/samanta-scavassa)
+-  [Joy](https://github.com/TinyjoyTW)
+-  [Juani](https://github.com/juanisolis1111)
+-  [Olumide](https://github.com/Wence88)
