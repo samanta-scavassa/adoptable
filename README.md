@@ -1,4 +1,4 @@
-<img style="width: '350px'" src="(https://i.ibb.co/6wVBxch/logo.png)"/>
+![logo](https://i.ibb.co/6wVBxch/logo.png)
 
 # Adoptable | a private and "no-kill" animal shelter
 
