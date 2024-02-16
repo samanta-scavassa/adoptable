@@ -1,6 +1,6 @@
 ![logo](https://ibb.co/54tFyXD)
 
-# Adoptable | a private and "no-kill" animal shelter located in Berlin, Germany
+# Adoptable | a private and "no-kill" animal shelter
 
 This website made with React is our second project for the Web Dev bootcamp at Ironhack. 
 
