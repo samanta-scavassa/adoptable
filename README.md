@@ -1,14 +1,54 @@
-# Adoptable 
+![logo](https://ibb.co/54tFyXD)
 
-This shelter website is our second project for the Web Dev bootcamp at Ironhack. 
+# Adoptable | a private and "no-kill" animal shelter located in Berlin, Germany
+
+This website made with React is our second project for the Web Dev bootcamp at Ironhack. 
+
+## What is website app for?
+
+- Regular user -> people interested in adopting an animal.
+- Admin -> manage the animal database.
+
+## Technologies used
+
+- React
+- NodeJS
+- Material UI 
+- VS code
+- Canva
+
+## Components
+- CatsList 
+- DogsList
+- Footer
+- Loading
+- Navbar
+- PetCard
+- PetListCard
+- SearchBar
+- TeamMemberCard
+
+## Pages
+- HomePage
+- About
+- AddPetForm
+- PetDetailsPage 
+- AdoptionPage
+- ContactPage
+- EditPetForm
+- ErrorPage 
+- FAQsPage
+
+## Custom Hooks 
+- updateData
+- useData
+
+## Utilities
+- filterHelpers
 
 ## Team Members
-- Samanta 
-- Joy
-- Juan 
-- Olumide
 
-## Other documents
-
-- [Useful Tips](./documents/tips.md)
-- [Difficulties We Encountered](./documents/mistakes.md)
+- Samanta ![GitHub Profile](https://github.com/samanta-scavassa)
+- Joy ![GitHub Profile](https://github.com/TinyjoyTW)
+- Juan ![GitHub Profile](https://github.com/juanisolis1111)
+- Olumide ![GitHub Profile](https://github.com/Wence88)
