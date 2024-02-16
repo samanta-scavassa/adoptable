@@ -4,6 +4,10 @@
 
 This website made with React is our second project for the Web Dev bootcamp at Ironhack. 
 
+## URL to our shelter website 
+
+[Adoptable](https://samanta-scavassa.github.io/adoptable/)
+
 ## What is website app for?
 
 - Regular user -> people interested in adopting an animal.
