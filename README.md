@@ -8,6 +8,10 @@ This website made with React is our second project for the Web Dev bootcamp at I
 
 [Adoptable](https://samanta-scavassa.github.io/adoptable/)
 
+## URL to our database
+
+[Adoptable API](https://adoptable.adaptable.app/)
+
 ## What is website app for?
 
 - Regular user -> people interested in adopting an animal.
