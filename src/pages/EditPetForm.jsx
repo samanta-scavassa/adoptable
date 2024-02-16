@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./EditPetForm.css";
-import { Button } from "@mui/base";
+import Button from "@mui/material/Button";
 import axios from "axios";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router";
@@ -19,7 +19,6 @@ export default function EditPetForm() {
       .get(petsURL)
       .then((res) => {
         setPet(res.data);
-        navigate("/adoptable");
       })
       .catch((err) => {
         navigate("/*");
@@ -212,7 +211,7 @@ export default function EditPetForm() {
             type="submit"
             onSubmit={handleEdit}
           >
-            Edit
+            Save
           </Button>
         </div>
       </form>
